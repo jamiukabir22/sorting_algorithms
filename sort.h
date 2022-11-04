@@ -31,7 +31,7 @@ void insertion_sort_list(listint_t **list);
 void swapem(listint_t *l, listint_t *r, listint_t *h);
 
 /** 2 */
-void selection_sort(int *array, sizw_t size);
+void selection_sort(int *array, size_t size);
 
 /** 3 */
 void quick_sort(int *array, size_t size);
@@ -49,7 +49,7 @@ void cocktail_sort_list(listint_t **list);
 /** 6 */
 void counting_sort(int *array, size_t size);
 int findmax(int **array, size_t size);
-int count(int *array, size_t size. int val);
+int count(int *array, size_t size, int val);
 
 /** 7 */
 void merge_sort(int *array, size_t size);
