@@ -1,10 +1,11 @@
 #include "sort.h"
+
 /**
- * swapem - Swaps node
- * @l: left/lower node
- * @r: right/later node
- * @h:  head of dlist
- */
+* swapem - Swaps nodes
+* @l: left or lower node
+* @r: right or later node
+* @h: Head of dlist
+*/
 
 void swapem(listint_t *l, listint_t *r, listint_t **h)
 {
@@ -23,10 +24,12 @@ void swapem(listint_t *l, listint_t *r, listint_t **h)
 		*h = r;
 	print_list(*h);
 }
+
 /**
- * insertion_sort_list - sorts doubly linked list of an integer
- * @list: Head of dlist
- */
+* insertion_sort_list - sorts a doubly linked list of integers
+* @list: Head of dlist
+*/
+
 void insertion_sort_list(listint_t **list)
 {
 	listint_t *curr, *next, *prev, *prev2;
@@ -37,12 +40,16 @@ void insertion_sort_list(listint_t **list)
 	curr = next = *list;
 	while (curr != NULL)
 	{
-		prev = curr->prev;
-		prev2 = prev;
-		if (prev->n > curr->n)
-			swapem(prev, curr, list);
-		curr = prev2;
+		while (curr->prev != NULL)
+		{
+			prev = curr->prev;
+			prev2 = prev;
+			if (prev->n > curr->n)
+				swapem(prev, curr, list);
+			curr = prev2;
+		}
+		curr = next->next;
+		next = curr;
 	}
-	curr = next->next;
-	next = curr;
+
 }
