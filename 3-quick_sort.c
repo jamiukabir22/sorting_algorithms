@@ -1,12 +1,11 @@
 #include "sort.h"
-
 /**
- * partition - Lomutu parttition scheme for quick sot algorithm
- * @a: Array to be sorted
- * @l: lowest index
- * @h: higheat index
- * Return: pivot
- */
+* partition - Lomutu partition scheme for quicksort algorithm
+* @a: Array to be sorted
+* @l: lowest index of array
+* @h: highest index of array
+* Return: index of pivot
+*/
 
 int partition(int *a, int l, int h)
 {
@@ -25,6 +24,7 @@ int partition(int *a, int l, int h)
 			{
 				t = a[i];
 				a[i] = a[j];
+				a[j] = t;
 				print_array(a, size);
 			}
 			i++;
@@ -37,14 +37,16 @@ int partition(int *a, int l, int h)
 		a[h] = t;
 		print_array(a, size);
 	}
+
 	return (i);
 }
+
 /**
- * qs - Quick sort recurssive function
- * @a: array to be sorted
- * @l: lowest index
- * @h: highest index
- */
+* qs - Quicksort recurssive function
+* @a: array to be sorted
+* @l: lowest index
+* @h: highest index
+*/
 
 void qs(int *a, int l, int h)
 {
@@ -57,11 +59,13 @@ void qs(int *a, int l, int h)
 		qs(a, p + 1, h);
 	}
 }
+
+
 /**
- * quick_sort - using quicksort algorithm to sort array
- * @array: Sorted array
- * @size: size of sorted array
- */
+* quick_sort - sorts array using quicksort algorithm
+* @array: Array to be sorted
+* @size: Size of array to sort
+*/
 
 void quick_sort(int *array, size_t size)
 {
