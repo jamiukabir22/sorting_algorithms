@@ -40,7 +40,7 @@ void qs(int *a, int l, int h);
 
 /** advanced */
 
-/** 4 */ 
+/** 4 */
 void shell_sort(int *array, size_t size);
 
 /** 5 */
